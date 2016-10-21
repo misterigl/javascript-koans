@@ -91,7 +91,7 @@ describe("About Functions", function() {
     };
     
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe("John rules!";
+    expect(praiseSinger.givePraise("John")).toBe("John rules!");
     
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
@@ -100,12 +100,12 @@ describe("About Functions", function() {
 
   it("should use function body as a string", function() {
     var add = new Function("a", "b", "return a + b;");
-    expect(add(1, 2)).toBe("a", "b", "return a + b;");
+    expect(add(1, 2)).toBe(3);
      
     var multiply = function(a, b) {
       // An internal comment
       return a * b;
     };
-    expect(multiply.toString()).toBe("return a * b;");
+    expect(multiply.toString()).toBe('function (a, b) {\n      // An internal comment\n      return a * b;\n    }');
   });    
 });
